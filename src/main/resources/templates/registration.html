@@ -1,69 +1,66 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Registration</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    &nbsp;&nbsp;
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <input type="hidden" name="_csrf" value="{{_csrf.token}}}"/>
 </head>
 <body>
 
 <div class="container">
-<h1> Registration form <span class="badge badge-secondary"></span></h1>
+    <h1> Registration form <span class="badge badge-secondary"></span></h1>
 </div>
 
-&nbsp;&nbsp;
+
 
 <div class="container">
-<div class="jumbotron">
+    <div class="jumbotron">
 
-<form class="form">
-    <div class="form-group mb-2">
-        <label for="email" class="sr-only">Email</label>
-        <input type="text" readonly class="form-control-plaintext" id="email" value="User ID">
-    </div>
-    <div class="form-group mx-sm-3 mb-2">
-        <label for="password" class="sr-only">Password</label>
-        <input type="password" class="form-control" id="password1" placeholder="user id">
-    </div>
+        <!--/*@thymesVar id="registration" type=""*/-->
+        <form action="#" th:action="@{/web/signup}" th:object="${registration}" method="post">
 
-    <div class="form-group mb-2">
-        <label for="4" class="sr-only">Email</label>
-        <input type="text" readonly class="form-control-plaintext" id="4" value="Mobile Phone">
+            <div class="form-group mb-2">
+                <input type="text" readonly class="form-control-plaintext" id="userid" value="User ID">
+            </div>
+
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" th:field="*{userid}" placeholder="user id">
+            </div>
+
+            <div class="form-group mb-2">
+                <input type="text" readonly class="form-control-plaintext" id="mobphone" value="Mobile Phone">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" th:field="*{mobphone}" placeholder="mobile phone">
+            </div>
+
+            <div class="form-group mb-2">
+                <input type="text" readonly class="form-control-plaintext" id="email" value="Email">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" th:field="*{email}" placeholder="email address">
+            </div>
+
+            <div class="form-group mb-2">
+                <input type="text" readonly class="form-control-plaintext" id="pass1" value="Password">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="password" class="form-control" th:field="*{password1}" placeholder="password">
+            </div>
+
+            <div class="form-group mb-2">
+                <input type="text" readonly class="form-control-plaintext" id="pass2" value="Confirm Password">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="password" class="form-control" th:field="*{password2}" placeholder="confirm password">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Register</button>
+        </form>
     </div>
-    <div class="form-group mx-sm-3 mb-2">
-        <label for="mobile phone" class="sr-only">Mobile Phone </label>
-        <input type="password" class="form-control" id="mobile phone" placeholder="mobile phone">
-    </div>
-    <div class="form-group mb-2">
-        <label for="5" class="sr-only">Email</label>
-        <input type="text" readonly class="form-control-plaintext" id="5" value="Email">
-    </div>
-    <div class="form-group mx-sm-3 mb-2">
-        <label for="Email Address" class="sr-only">Mobile Phone </label>
-        <input type="password" class="form-control" id="email address" placeholder="email address">
-    </div>
-    <div class="form-group mb-2">
-        <label for="6" class="sr-only">Email</label>
-        <input type="text" readonly class="form-control-plaintext" id="6" value="Password">
-    </div>
-    <div class="form-group mx-sm-3 mb-2">
-        <label for="password" class="sr-only">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="password">
-    </div>
-    <div class="form-group mb-2">
-        <label for="7" class="sr-only">Confirm Password</label>
-        <input type="text" readonly class="form-control-plaintext" id="7" value="Confirm Password">
-    </div>
-    <div class="form-group mx-sm-3 mb-2">
-        <label for="confirm password" class="sr-only">Password</label>
-        <input type="password" class="form-control" id="confirm password" placeholder="confirm password">
-    </div>
-    <button type="submit" class="btn btn-primary mb-2">Register</button>
-</form>
-</div>
 
 </div>
 <script type="text/javascript" src="js/bootstrap.js"></script>

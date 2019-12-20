@@ -1,34 +1,32 @@
 package com.eventmanagment.event.contoller;
 
-import com.eventmanagment.event.model.User;
-import com.eventmanagment.event.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.eventmanagment.event.model.Registration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import java.util.Collections;
-import java.util.Map;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/web")
 public class RegistrationController {
-    @Autowired
-    private UserRepository userRepository;
 
-    @GetMapping("/registration")
-    public String registration(){
+
+    @GetMapping("/signup")
+    public String getSignedUp() {
         return "registration";
     }
 
+
+
     @PostMapping("/registration")
-    public String addUser(User user, Map<String, Object> model){
-       User userFromDb = userRepository.findByUsername(user.getUsername());
 
-       if (userFromDb != null){
-           model.put("message", "User exists!");
-           return "registration";
-       }
+    public String doRegister(@ModelAttribute Registration registration) {
+        System.out.println("Registration" + registration.getEmail());
 
-        return "redirect:/login";
+        return "registration";
     }
+
 }
+
+

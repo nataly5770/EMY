@@ -2,6 +2,7 @@ package com.eventmanagment.event.contoller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -16,4 +17,14 @@ public class LoginController {
         return "login";
     }
 
-}
+    @PostMapping("/login")
+    public String doLoginPage(Object request) {
+        return "gallery";
+    }
+
+
+    }
+
+
+
+

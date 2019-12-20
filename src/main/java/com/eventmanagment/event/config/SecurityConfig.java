@@ -43,22 +43,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        //System log into here and gives the object over
-        http.cors().and().csrf().disable()
-                //then below helps us to turns the autharization on
-                .authorizeRequests()
-                .antMatchers("/home", "/user/signup").permitAll()
-                .antMatchers("/", "/registration").permitAll()
-                .antMatchers("/admin/**").hasAnyRole("ADMIN")
-                .antMatchers("/user/**").hasAnyRole("USER")
-                .anyRequest().authenticated()
-                .and().formLogin()
-                .loginPage("/user").usernameParameter("userid")
-                .passwordParameter("passcode").permitAll()
-                .and()
-                .logout()
-                .logoutUrl("/signout")
-                .permitAll();
+
+        http.authorizeRequests().antMatchers("/**").permitAll().anyRequest().authenticated().and().csrf().disable();
+//        //System log into here and gives the object over
+//        http.cors().and().csrf().disable()
+//                //then below helps us to turns the autharization on
+//                .authorizeRequests()
+//                .antMatchers("/", "/registration").permitAll()
+//                .antMatchers("/home", "/user/signup").permitAll()
+//                .antMatchers("/admin/**").hasAnyRole("ADMIN")
+//                .antMatchers("/user/**").hasAnyRole("USER")
+//                .anyRequest().authenticated()
+//                .and().formLogin()
+//                .loginPage("/login").usernameParameter("userid")
+//                .passwordParameter("passcode").permitAll()
+//                .and()
+//                .logout()
+//                .logoutUrl("/signout")
+//                .permitAll();
     }
 
 
