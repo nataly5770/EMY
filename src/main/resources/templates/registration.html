@@ -1,73 +1,151 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Registration</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <input type="hidden" name="_csrf" value="{{_csrf.token}}}"/>
 </head>
-<body>
 
+<body>
 <div class="container">
     <h1> Registration form <span class="badge badge-secondary"></span></h1>
-</div>
-
-
-
-<div class="container">
     <div class="jumbotron">
-
-        <!--/*@thymesVar id="registration" type=""*/-->
-        <form action="#" th:action="@{/web/signup}" th:object="${registration}" method="post">
-
-            <div class="form-group mb-2">
-                <input type="text" readonly class="form-control-plaintext" id="userid" value="User ID">
-            </div>
-
+        <form action="/user/signup" method="post">
             <div class="form-group mx-sm-3 mb-2">
-                <input type="text" class="form-control" th:field="*{userid}" placeholder="user id">
-            </div>
-
-            <div class="form-group mb-2">
-                <input type="text" readonly class="form-control-plaintext" id="mobphone" value="Mobile Phone">
+                <input type="text" class="form-control" name="username" placeholder="Username(email address)">
             </div>
             <div class="form-group mx-sm-3 mb-2">
-                <input type="text" class="form-control" th:field="*{mobphone}" placeholder="mobile phone">
-            </div>
-
-            <div class="form-group mb-2">
-                <input type="text" readonly class="form-control-plaintext" id="email" value="Email">
+                <input type="password" class="form-control" name="password" placeholder="password">
             </div>
             <div class="form-group mx-sm-3 mb-2">
-                <input type="text" class="form-control" th:field="*{email}" placeholder="email address">
-            </div>
-
-            <div class="form-group mb-2">
-                <input type="text" readonly class="form-control-plaintext" id="pass1" value="Password">
+                <input type="text" class="form-control" name="name" placeholder="Full name">
             </div>
             <div class="form-group mx-sm-3 mb-2">
-                <input type="password" class="form-control" th:field="*{password1}" placeholder="password">
-            </div>
-
-            <div class="form-group mb-2">
-                <input type="text" readonly class="form-control-plaintext" id="pass2" value="Confirm Password">
+                <input type="text" class="form-control" name="address" placeholder="Address">
             </div>
             <div class="form-group mx-sm-3 mb-2">
-                <input type="password" class="form-control" th:field="*{password2}" placeholder="confirm password">
+                <input type="text" class="form-control" name="mobPhoneNumber" placeholder="mobile phone">
             </div>
+
+<!--            <div class="form-group mx-sm-3 mb-2">-->
+<!--                <input type="password" class="form-control" th:field="*{password2}" placeholder="re-type password">-->
+<!--             </div>-->
             <button type="submit" class="btn btn-primary mb-2">Register</button>
         </form>
     </div>
 
 </div>
-<script type="text/javascript" src="js/bootstrap.js"></script>
-
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head>-->
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />-->
+<!--    <title>Registration</title>-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">-->
+<!--    <input type="hidden" name="_csrf" value="{{_csrf.token}}}"/>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<div class="container">-->
+<!--    <h1> Registration form <span class="badge badge-secondary"></span></h1>-->
+<!--</div>-->
+
+
+
+<!--<div class="container">-->
+<!--    <div class="jumbotron">-->
+
+<!--        &lt;!&ndash;/*@thymesVar id="registration" type=""*/&ndash;&gt;-->
+<!--        <form action="#" th:action="@{/web/signup}" th:object="${registration}" method="post">-->
+
+<!--&lt;!&ndash;            <div class="form-group mb-2">&ndash;&gt;-->
+<!--&lt;!&ndash;                <input type="text" readonly class="form-control-plaintext" id="userid" value="User ID">&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+
+<!--            <div class="form-group mx-sm-3 mb-2">-->
+<!--                <input type="text" class="form-control" th:field="*{userid}" placeholder="user id">-->
+<!--            </div>-->
+
+<!--            <div class="form-group mb-2">-->
+<!--                <input type="text" readonly class="form-control-plaintext" id="mobphone" value="Mobile Phone">-->
+<!--            </div>-->
+<!--            <div class="form-group mx-sm-3 mb-2">-->
+<!--                <input type="text" class="form-control" th:field="*{mobphone}" placeholder="mobile phone">-->
+<!--            </div>-->
+
+<!--            <div class="form-group mb-2">-->
+<!--                <input type="text" readonly class="form-control-plaintext" id="email" value="Email">-->
+<!--            </div>-->
+<!--            <div class="form-group mx-sm-3 mb-2">-->
+<!--                <input type="text" class="form-control" th:field="*{email}" placeholder="email address">-->
+<!--            </div>-->
+
+<!--            <div class="form-group mb-2">-->
+<!--                <input type="text" readonly class="form-control-plaintext" id="pass1" value="Password">-->
+<!--            </div>-->
+<!--            <div class="form-group mx-sm-3 mb-2">-->
+<!--                <input type="password" class="form-control" th:field="*{password1}" placeholder="password">-->
+<!--            </div>-->
+
+<!--            <div class="form-group mb-2">-->
+<!--                <input type="text" readonly class="form-control-plaintext" id="pass2" value="Confirm Password">-->
+<!--            </div>-->
+<!--            <div class="form-group mx-sm-3 mb-2">-->
+<!--                <input type="password" class="form-control" th:field="*{password2}" placeholder="confirm password">-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-primary mb-2">Register</button>-->
+<!--        </form>-->
+<!--    </div>-->
+
+<!--</div>-->
+<!--<script type="text/javascript" src="js/bootstrap.js"></script>-->
+
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+
+<!--</body>-->
+<!--</html>-->
